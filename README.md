@@ -1,5 +1,5 @@
 # Database-management-system
-DBMS project
+DBMS project using sql
 
 Artifact Inventory and Provenance Management System
 
