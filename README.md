@@ -1,5 +1,6 @@
 # Database-management-system
-DBMS project using sql
+DBMS project using relational database model. 
+Documentation included (Software Engineering)
 
 Artifact Inventory and Provenance Management System
 
