@@ -1,0 +1,79 @@
+/* [project]/src/app/sections/login.css [app-client] (css) */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url("../media/starry.8bdb6269.gif") top;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.form-container {
+  background-color: #7777ed;
+  padding: 20px;
+  border-radius: 15px;
+  width: 400px;
+  box-shadow: 0 4px 10px #0000004d;
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin: 10px 0 5px;
+  text-align: left;
+  font-size: 14px;
+  color: #000;
+}
+
+.form-container input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.form-container input:focus {
+  border-color: #7777ed;
+  box-shadow: 0 0 5px #7777ed;
+}
+
+.form-button {
+  background-color: orange;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-button:hover {
+  background-color: #ff8c00;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: #140a4e;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.toggle-button:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=src_app_sections_login_b52d8e.css.map*/

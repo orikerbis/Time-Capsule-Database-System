@@ -1,0 +1,35 @@
+/* [project]/src/app/components/sectionTitle.css [app-client] (css) */
+.section-title {
+  padding-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  line-height: 1px;
+  margin: 0 0 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaa;
+  font-family: Poppins, sans-serif;
+}
+
+.section-title h2:after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: #fff3;
+  margin: 4px 10px;
+}
+
+.section-title p {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: Playfair Display, serif;
+  color: #7777ed;
+}
+
+/*# sourceMappingURL=src_app_components_sectionTitle_b52d8e.css.map*/

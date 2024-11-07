@@ -1,0 +1,35 @@
+/* [project]/src/app/globals.css [app-client] (css) */
+body {
+  background: url("../media/starry.8bdb6269.gif") center;
+  color: #fff;
+  font-family: Open Sans, sans-serif !important;
+}
+
+a {
+  color: #cda45e;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #7777ed;
+  text-decoration: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Playfair Display, scrif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background: url("../media/starry.8bdb6269.gif") center;
+}
+
+/*# sourceMappingURL=src_app_globals_b52d8e.css.map*/

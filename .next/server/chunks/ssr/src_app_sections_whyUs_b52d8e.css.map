@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/src/app/sections/whyUs.css"],"sourcesContent":[".why-us .box {\r\n    padding: 50px 30px;\r\n    \r\n    transition: all ease-in-out 0.3s;\r\n    background: #1a1814;\r\n}\r\n\r\n.why-us .box span {\r\n    display: block;\r\n    font-size: 28px;\r\n    font-weight: 700;\r\n    color: #7777ed;\r\n}\r\n\r\n.why-us .box h4 {\r\n    font-size: 24px;\r\n    font-weight: 600;\r\n    padding: 0;\r\n    margin: 20px 0;\r\n    color: rgba(255, 255, 255, 0.8);\r\n}\r\n\r\n.why-us .box p {\r\n    color: #aaaaaa;\r\n    font-size: 15px;\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\n.why-us .box:hover {\r\n    background: #7777ed;\r\n    padding: 30px 30px 70px 30px;\r\n    \r\n}\r\n\r\n.why-us .box:hover span,\r\n.why-us .box:hover h4,\r\n.why-us .box:hover p {\r\n    color: #fff;\r\n}\r\n\r\n"],"names":[],"mappings":"AAAA;;;;;;AAOA;;;;;;;AAOA;;;;;;;;AAQA;;;;;;;AAOA;;;;;AAMA"}},
+    {"offset": {"line": 37, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

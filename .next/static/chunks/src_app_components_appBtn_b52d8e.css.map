@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/src/app/components/appBtn.css"],"sourcesContent":[".app-btn {\r\n    margin: 0 0 0 15px;\r\n    border: 2px solid #7777ed;\r\n    color: #fff;\r\n    border-radius: 50px;\r\n    padding: 8px 25px;\r\n    text-transform: uppercase;\r\n    font-size: 13px;\r\n    font-weight: 500;\r\n    letter-spacing: 1px;\r\n    transition: 0.3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.app-btn:hover {\r\n    background: #7777ed;\r\n    color: #fff;\r\n}\r\n\r\n@media (max-width: 992px) {\r\n    .app-btn {\r\n        margin: 0 15px 0 0;\r\n        padding: 8px 20px;\r\n    }\r\n}"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;AAcA;;;;;AAKA;EACI"}},
+    {"offset": {"line": 26, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/src/app/components/heroBtn.css"],"sourcesContent":["#hero .btn-hero {\r\n    font-weight: 600;\r\n    font-size: 13px;\r\n    letter-spacing: 0.5px;\r\n    text-transform: uppercase;\r\n    display: inline-block;\r\n    padding: 12px 30px;\r\n    border-radius: 50px;\r\n    transition: 0.3s;\r\n    line-height: 1;\r\n    color: white;\r\n    border: 2px solid #7777ed;\r\n    cursor: pointer;\r\n}\r\n\r\n#hero .btn-hero:hover {\r\n    background: #7777ed;\r\n    color: #fff;\r\n}\r\n"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;AAeA"}},
+    {"offset": {"line": 20, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

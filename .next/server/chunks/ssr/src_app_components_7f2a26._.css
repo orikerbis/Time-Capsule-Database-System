@@ -1,0 +1,112 @@
+/* [project]/src/app/components/topBar.css [app-client] (css) */
+#topbar {
+  height: 40px;
+  font-size: 14px;
+  transition: all .5s;
+  z-index: 996;
+}
+
+#topbar.topbar-scrolled {
+  top: -40px;
+}
+
+#topbar .contact-info i {
+  font-style: normal;
+  color: #d9ba85;
+}
+
+#topbar .contact-info i span {
+  padding-left: 5px;
+  color: #fff;
+}
+
+#topbar .languages ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #cda45e;
+}
+
+#topbar .languages ul a {
+  color: #fff;
+}
+
+#topbar .languages ul li * li {
+  padding-left: 10px;
+}
+
+#topbar .languages ul li * li:before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #ffffff80;
+  content: "/";
+}
+
+
+/* [project]/src/app/components/header.css [app-client] (css) */
+#header {
+  background: #0c0b0999;
+  border-bottom: 1px solid #0c0b0999;
+  transition: all .5s;
+  z-index: 997;
+  padding: 15px 0;
+  top: 40px;
+}
+
+#header.header-scrolled {
+  top: 0;
+  background: #000000d9;
+  border-bottom: 1px solid #37332a;
+}
+
+#header .logo {
+  font-size: 28px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: Poppins, sans-serif;
+}
+
+#header .logo a {
+  color: #fff;
+}
+
+#header .logo img {
+  max-height: 40px;
+}
+
+
+/* [project]/src/app/components/appBtn.css [app-client] (css) */
+.app-btn {
+  margin: 0 0 0 15px;
+  border: 2px solid #cda45e;
+  color: #fff;
+  border-radius: 50px;
+  padding: 8px 25px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.app-btn:hover {
+  background: #cda45e;
+  color: #fff;
+}
+
+@media (width <= 992px) {
+  .app-btn {
+    margin: 0 15px 0 0;
+    padding: 8px 20px;
+  }
+}
+
+
+/*# sourceMappingURL=src_app_components_7f2a26._.css.map*/

@@ -1,0 +1,22 @@
+/* [project]/src/app/components/heroBtn.css [app-client] (css) */
+#hero .btn-hero {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: all .3s;
+  line-height: 1;
+  color: #fff;
+  border: 2px solid #7777ed;
+  cursor: pointer;
+}
+
+#hero .btn-hero:hover {
+  background: #7777ed;
+  color: #fff;
+}
+
+/*# sourceMappingURL=src_app_components_heroBtn_b52d8e.css.map*/
