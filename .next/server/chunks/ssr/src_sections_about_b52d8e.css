@@ -1,0 +1,77 @@
+/* [project]/src/sections/about.css [app-client] (css) */
+.about .about-img {
+  position: relative;
+  transition: all .5s;
+}
+
+.about .about-img img {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.about .about-img:before {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+  content: "";
+  border-left: 5px solid #7777ed;
+  border-top: 5px solid #7777ed;
+  transition: all .5s;
+}
+
+.about .about-img:after {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+  content: "";
+  border-right: 5px solid #7777ed;
+  border-bottom: 5px solid #7777ed;
+  transition: all .5s;
+}
+
+.about .about-img:hover {
+  transform: scale(1.03);
+}
+
+.about .about-img:hover:before {
+  left: 10px;
+  top: 10px;
+}
+
+.about .about-img:hover:after {
+  right: 10px;
+  bottom: 10px;
+}
+
+.about .content {
+  position: relative;
+  color: #a19898;
+  margin-top: 160px;
+}
+
+.about .content h3 {
+  font-family: Playfair Display\, serif;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.about .content p {
+  font-family: Playfair Display\, serif;
+  font-size: 19px;
+  color: #a19898;
+  margin-top: 30px;
+  padding-right: 80px;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*# sourceMappingURL=src_sections_about_b52d8e.css.map*/

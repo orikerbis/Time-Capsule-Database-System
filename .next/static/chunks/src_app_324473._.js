@@ -23,12 +23,12 @@ function HeroBtn({ name, target }) {
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-        href: `/${target}`,
+        href: "/Login",
         className: `btn-hero animated fadeInUp scrollto ${name.includes('book') ? 'ms-4' : ''}`,
         children: name
     }, void 0, false, {
         fileName: "[project]/src/app/components/HeroBtn.tsx",
-        lineNumber: 15,
+        lineNumber: 16,
         columnNumber: 9
     }, this);
 }
@@ -85,7 +85,7 @@ function Hero() {
                                 className: "btns",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$HeroBtn$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                     name: "Seal your memory",
-                                    target: "/login"
+                                    target: "/Login"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/sections/Hero.tsx",
                                     lineNumber: 20,
@@ -152,7 +152,7 @@ var _s = __turbopack_refresh__.signature();
 ;
 function HomePage() {
     _s();
-    const [showLogin, setShowLogin] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false); // State to toggle between login and register
+    const [showLogin, setShowLogin] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false); // Toggle between login and register
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         fullName: '',
         lastName: '',
@@ -160,15 +160,27 @@ function HomePage() {
         username: '',
         password: ''
     });
+    const [message, setMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(''); // State to hold error/success message
     const handleChange = (e)=>{
         const { name, value } = e.target;
+        setFormData((prevFormData)=>({
+                ...prevFormData,
+                [name]: value
+            }));
+    };
+    const clearForm = ()=>{
         setFormData({
-            ...formData,
-            [name]: value
+            fullName: '',
+            lastName: '',
+            email: '',
+            username: '',
+            password: ''
         });
     };
     const handleRegister = async (e)=>{
         e.preventDefault();
+        clearForm(); // Clear form inputs immediately when the button is clicked
+        setMessage(''); // Clear any previous message
         try {
             const response = await fetch('/api/register', {
                 method: 'POST',
@@ -179,17 +191,45 @@ function HomePage() {
             });
             const data = await response.json();
             if (response.ok) {
-                alert(data.message);
+                setMessage(data.message); // Display success message
             } else {
-                alert(data.error);
+                setMessage(data.error); // Display error message
             }
         } catch (error) {
             console.error('Error registering user:', error);
-            alert('Something went wrong. Please try again.');
+            setMessage('Something went wrong. Please try again.');
+        }
+    };
+    const handleLogin = async (e)=>{
+        e.preventDefault();
+        clearForm(); // Clear form inputs immediately when the button is clicked
+        setMessage(''); // Clear any previous message
+        try {
+            const response = await fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: formData.username,
+                    password: formData.password
+                })
+            });
+            const data = await response.json();
+            if (response.ok) {
+                setMessage(data.message); // Display success message
+            } else {
+                setMessage(data.error); // Display error message
+            }
+        } catch (error) {
+            console.error('Error logging in:', error);
+            setMessage('Something went wrong. Please try again.');
         }
     };
     const handleToggle = ()=>{
         setShowLogin(!showLogin); // Switch between login and register
+        setMessage(''); // Clear any previous message
+        clearForm(); // Clear form inputs when toggling
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "auth-container",
@@ -200,7 +240,7 @@ function HomePage() {
                     children: "Register"
                 }, void 0, false, {
                     fileName: "[project]/src/app/sections/Login.tsx",
-                    lineNumber: 52,
+                    lineNumber: 92,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -210,7 +250,7 @@ function HomePage() {
                             children: "Full Name:"
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 54,
+                            lineNumber: 94,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -222,14 +262,14 @@ function HomePage() {
                             onChange: handleChange
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 55,
+                            lineNumber: 95,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                             children: "Last Name:"
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 64,
+                            lineNumber: 104,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -241,14 +281,14 @@ function HomePage() {
                             onChange: handleChange
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 65,
+                            lineNumber: 105,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                             children: "Email:"
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 74,
+                            lineNumber: 114,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -260,14 +300,14 @@ function HomePage() {
                             onChange: handleChange
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 75,
+                            lineNumber: 115,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                             children: "Password:"
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 84,
+                            lineNumber: 124,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -279,14 +319,14 @@ function HomePage() {
                             onChange: handleChange
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 85,
+                            lineNumber: 125,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                             children: "Username:"
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 94,
+                            lineNumber: 134,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -298,7 +338,7 @@ function HomePage() {
                             onChange: handleChange
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 95,
+                            lineNumber: 135,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -307,38 +347,46 @@ function HomePage() {
                             children: "Register"
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 104,
+                            lineNumber: 144,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/sections/Login.tsx",
-                    lineNumber: 53,
+                    lineNumber: 93,
                     columnNumber: 11
+                }, this),
+                message && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                    className: "form-message",
+                    children: message
+                }, void 0, false, {
+                    fileName: "[project]/src/app/sections/Login.tsx",
+                    lineNumber: 148,
+                    columnNumber: 23
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     children: [
                         "Already have an account?",
                         ' ',
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            className: "toggle-button",
+                            className: " toggle-button",
                             onClick: handleToggle,
                             children: "Login"
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 110,
+                            lineNumber: 151,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/sections/Login.tsx",
-                    lineNumber: 108,
+                    lineNumber: 149,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/sections/Login.tsx",
-            lineNumber: 51,
+            lineNumber: 91,
             columnNumber: 9
         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "form-container",
@@ -347,41 +395,48 @@ function HomePage() {
                     children: "Login"
                 }, void 0, false, {
                     fileName: "[project]/src/app/sections/Login.tsx",
-                    lineNumber: 117,
+                    lineNumber: 158,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                    onSubmit: handleLogin,
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                             children: "Username:"
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 119,
+                            lineNumber: 160,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                             type: "text",
+                            name: "username",
                             placeholder: "Enter Username...",
-                            required: true
+                            required: true,
+                            value: formData.username,
+                            onChange: handleChange
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 120,
+                            lineNumber: 161,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                             children: "Password:"
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 122,
+                            lineNumber: 170,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                             type: "password",
+                            name: "password",
                             placeholder: "Enter Password...",
-                            required: true
+                            required: true,
+                            value: formData.password,
+                            onChange: handleChange
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 123,
+                            lineNumber: 171,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -390,14 +445,22 @@ function HomePage() {
                             children: "Login"
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 125,
+                            lineNumber: 180,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/sections/Login.tsx",
-                    lineNumber: 118,
+                    lineNumber: 159,
                     columnNumber: 11
+                }, this),
+                message && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                    className: "form-message",
+                    children: message
+                }, void 0, false, {
+                    fileName: "[project]/src/app/sections/Login.tsx",
+                    lineNumber: 184,
+                    columnNumber: 23
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     children: [
@@ -409,28 +472,28 @@ function HomePage() {
                             children: "Register"
                         }, void 0, false, {
                             fileName: "[project]/src/app/sections/Login.tsx",
-                            lineNumber: 129,
+                            lineNumber: 187,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/sections/Login.tsx",
-                    lineNumber: 127,
+                    lineNumber: 185,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/sections/Login.tsx",
-            lineNumber: 116,
+            lineNumber: 157,
             columnNumber: 9
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/sections/Login.tsx",
-        lineNumber: 49,
+        lineNumber: 89,
         columnNumber: 5
     }, this);
 }
-_s(HomePage, "M383P9XC5dnD7V/tpylS79TKH2c=");
+_s(HomePage, "CN2lZf8L3JGBhINOHa/ktPPJKoI=");
 _c = HomePage;
 var _c;
 __turbopack_refresh__.register(_c, "HomePage");

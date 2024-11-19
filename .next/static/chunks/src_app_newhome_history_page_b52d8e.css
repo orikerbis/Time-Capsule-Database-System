@@ -1,0 +1,81 @@
+/* [project]/src/app/newhome/history/page.css [app-client] (css) */
+.scheduled-container {
+  color: #fff;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.scheduled-main {
+  text-align: center;
+  padding: 20px;
+}
+
+.scheduled-main h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.error-text {
+  color: red;
+  margin-bottom: 20px;
+  font-size: .9rem;
+}
+
+.capsules-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+}
+
+.column h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.capsules-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.capsule-item {
+  display: flex;
+  align-items: center;
+  background: #ffffff0d;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #ffffff1a;
+  width: 100%;
+  max-width: 500px;
+  margin: 30px 0;
+  position: relative;
+  margin-left: 50px;
+}
+
+.capsule-image {
+  width: 70px;
+  height: 70px;
+  margin-left: 10px;
+  margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #fff3;
+}
+
+.capsule-info p {
+  font-size: 1rem;
+  margin: 5px 0;
+  text-align: left;
+  padding-left: 20px;
+}
+
+/*# sourceMappingURL=src_app_newhome_history_page_b52d8e.css.map*/

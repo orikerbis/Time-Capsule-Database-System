@@ -1,0 +1,39 @@
+/* [project]/src/sections/whyUs.css [app-client] (css) */
+.why-us .box {
+  padding: 50px 30px;
+  transition: all .3s ease-in-out;
+  background: #1a1814;
+}
+
+.why-us .box span {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #7777ed;
+}
+
+.why-us .box h4 {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 0;
+  margin: 20px 0;
+  color: #fffc;
+}
+
+.why-us .box p {
+  color: #aaa;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.why-us .box:hover {
+  background: #7777ed;
+  padding: 30px 30px 70px;
+}
+
+.why-us .box:hover span, .why-us .box:hover h4, .why-us .box:hover p {
+  color: #fff;
+}
+
+/*# sourceMappingURL=src_sections_whyUs_b52d8e.css.map*/

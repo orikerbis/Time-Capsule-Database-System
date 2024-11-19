@@ -76,4 +76,10 @@
   text-decoration: underline;
 }
 
+.form-message {
+  color: red;
+  font-size: .9em;
+  margin-top: 10px;
+}
+
 /*# sourceMappingURL=src_app_sections_login_b52d8e.css.map*/

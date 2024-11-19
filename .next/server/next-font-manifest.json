@@ -1,6 +1,24 @@
 {
   "app": {
-    "[project]/src/app/page": [
+    "[project]/src/app/newhome/createCapsuleForm/page": [
+      "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
+    ],
+    "[project]/src/app/newhome/addContents/page": [
+      "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
+    ],
+    "[project]/src/app/newhome/addSharedUsers/page": [
+      "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
+    ],
+    "[project]/src/app/newhome/dashboardPage/page": [
+      "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
+    ],
+    "[project]/src/app/newhome/timeCapsulePage/page": [
+      "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
+    ],
+    "[project]/src/app/newhome/history/page": [
+      "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
+    ],
+    "[project]/src/app/newhome/profile/page": [
       "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
     ]
   },

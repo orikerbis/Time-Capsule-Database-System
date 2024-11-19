@@ -1,4 +1,17 @@
 {
-  "/page": "app/page.js",
-  "/api/whyus/route": "app/api/whyus/route.js"
+  "/newhome/createCapsuleForm/page": "app/newhome/createCapsuleForm/page.js",
+  "/api/time-capsule/route": "app/api/time-capsule/route.js",
+  "/newhome/addContents/page": "app/newhome/addContents/page.js",
+  "/api/addContents/route": "app/api/addContents/route.js",
+  "/newhome/addSharedUsers/page": "app/newhome/addSharedUsers/page.js",
+  "/api/addSharedUsers/route": "app/api/addSharedUsers/route.js",
+  "/newhome/dashboardPage/page": "app/newhome/dashboardPage/page.js",
+  "/api/getTimeCapsules/route": "app/api/getTimeCapsules/route.js",
+  "/newhome/timeCapsulePage/page": "app/newhome/timeCapsulePage/page.js",
+  "/api/capsuleInfo/route": "app/api/capsuleInfo/route.js",
+  "/newhome/history/page": "app/newhome/history/page.js",
+  "/api/audit-logs/route": "app/api/audit-logs/route.js",
+  "/newhome/profile/page": "app/newhome/profile/page.js",
+  "/api/getUserProfile/route": "app/api/getUserProfile/route.js",
+  "/api/updateProfile/route": "app/api/updateProfile/route.js"
 }

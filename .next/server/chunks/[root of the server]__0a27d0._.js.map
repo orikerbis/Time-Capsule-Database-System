@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 47, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/src/data/data.ts"],"sourcesContent":["export const whyUs = [\r\n    {\r\n        id: 1,\r\n        title: 'Secure & Private',\r\n        content: \"Your memories are safe with TimeLock. We prioritize privacy and security, using robust encryption to ensure your time capsule remains protected and only accessible when the time is right.\",\r\n    },\r\n    {\r\n        id: 2,\r\n        title: 'Timeless Access',\r\n        content: \"TimeLock isn’t just about storage—it’s about future-proofing your memories. With our user-friendly design and compatibility across devices, reliving your memories will be easy no matter how far into the future.\",\r\n    },\r\n    {\r\n        id: 3,\r\n        title: 'Curate Your Legacy',\r\n        content: \"TimeLock allows you to select and arrange your most treasured moments, making it easy to create a lasting legacy that reflects your journey, ready to be shared with loved ones or kept for future generations.\",\r\n    },\r\n];"],"names":[],"mappings":";;;AAAO,MAAM,QAAQ;IACjB;QACI,IAAI;QACJ,OAAO;QACP,SAAS;IACb;IACA;QACI,IAAI;QACJ,OAAO;QACP,SAAS;IACb;IACA;QACI,IAAI;QACJ,OAAO;QACP,SAAS;IACb;CACH"}},
+    {"offset": {"line": 67, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 73, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/src/app/api/whyus/route.ts"],"sourcesContent":["import { whyUs } from \"../../../data/data\";\r\n\r\nexport async function GET() {\r\n  return Response.json(whyUs);\r\n}\r\n"],"names":[],"mappings":";;;AAAA;;AAEO,eAAe;IACpB,OAAO,SAAS,IAAI,CAAC,qHAAA,CAAA,QAAK;AAC5B"}},
+    {"offset": {"line": 81, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

@@ -1,0 +1,3 @@
+{
+  "/api/getTimeCapsules/route": "app/api/getTimeCapsules/route.js"
+}

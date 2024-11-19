@@ -1,0 +1,38 @@
+/* [project]/src/components/backToTopBtn.css [app-client] (css) */
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  transition: all .4s;
+  border: 2px solid #7777ed;
+  text-decoration: none;
+}
+
+.back-to-top i {
+  font-size: 28px;
+  color: #7777ed;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #7777ed;
+  color: #1a1814;
+}
+
+.back-to-top:hover i {
+  color: #444;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/*# sourceMappingURL=src_components_backToTopBtn_e67002.css.map*/

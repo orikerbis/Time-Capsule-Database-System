@@ -1,0 +1,336 @@
+/* [project]/src/app/sections/hero.css [app-client] (css) */
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../media/starry.8bdb6269.gif") top;
+  background-size: cover;
+  position: relative;
+  padding: 0;
+}
+
+#hero:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero .container {
+  padding-top: 110px;
+}
+
+@media (width <= 992px) {
+  #hero .container {
+    padding-top: 98px;
+  }
+}
+
+#hero h1 {
+  margin: 0;
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 7.5rem;
+  color: #c2c2f3;
+  font-family: Playfair Display\, serif;
+}
+
+#hero h1 span {
+  color: #7777ed;
+}
+
+#hero h2 {
+  color: #eee;
+  margin-bottom: 10px 0 0 0;
+  font-size: 2rem;
+}
+
+#hero .btns {
+  margin-top: 30px;
+}
+
+@media (width >= 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (width <= 992px) {
+  #hero .play-btn {
+    margin-top: 30px;
+  }
+}
+
+@media (height <= 500px) {
+  #hero {
+    height: auto;
+  }
+
+  #hero .container {
+    padding-top: 130px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (width <= 768px) {
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@-webkit-keyframes pulsate-btn {
+  0% {
+    transform: scale(.6);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes pulsate-btn {
+  0% {
+    tranform: scale(.6, .6);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+
+/* [project]/src/app/components/heroBtn.css [app-client] (css) */
+#hero .btn-hero {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: all .3s;
+  line-height: 1;
+  color: #fff;
+  border: 2px solid #7777ed;
+  cursor: pointer;
+}
+
+#hero .btn-hero:hover {
+  background: #7777ed;
+  color: #fff;
+}
+
+
+/* [project]/src/app/sections/login.css [app-client] (css) */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url("../media/starry.8bdb6269.gif") top;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.form-container {
+  background-color: #7777ed;
+  padding: 20px;
+  border-radius: 15px;
+  width: 400px;
+  box-shadow: 0 4px 10px #0000004d;
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin: 10px 0 5px;
+  text-align: left;
+  font-size: 14px;
+  color: #000;
+}
+
+.form-container input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.form-container input:focus {
+  border-color: #7777ed;
+  box-shadow: 0 0 5px #7777ed;
+}
+
+.form-button {
+  background-color: orange;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-button:hover {
+  background-color: #ff8c00;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: #140a4e;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.toggle-button:hover {
+  text-decoration: underline;
+}
+
+.form-message {
+  color: red;
+  font-size: .9em;
+  margin-top: 10px;
+}
+
+
+/* [project]/src/app/sections/about.css [app-client] (css) */
+.about .about-img {
+  position: relative;
+  transition: all .5s;
+}
+
+.about .about-img img {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.about .about-img:before {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+  content: "";
+  border-left: 5px solid #7777ed;
+  border-top: 5px solid #7777ed;
+  transition: all .5s;
+}
+
+.about .about-img:after {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+  content: "";
+  border-right: 5px solid #7777ed;
+  border-bottom: 5px solid #7777ed;
+  transition: all .5s;
+}
+
+.about .about-img:hover {
+  transform: scale(1.03);
+}
+
+.about .about-img:hover:before {
+  left: 10px;
+  top: 10px;
+}
+
+.about .about-img:hover:after {
+  right: 10px;
+  bottom: 10px;
+}
+
+.about .content {
+  position: relative;
+  color: #a19898;
+  margin-top: 160px;
+}
+
+.about .content h3 {
+  font-family: Playfair Display\, serif;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.about .content p {
+  font-family: Playfair Display\, serif;
+  font-size: 19px;
+  color: #a19898;
+  margin-top: 30px;
+  padding-right: 80px;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* [project]/src/app/sections/whyUs.css [app-client] (css) */
+.why-us .box {
+  padding: 50px 30px;
+  transition: all .3s ease-in-out;
+  background: #1a1814;
+}
+
+.why-us .box span {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #7777ed;
+}
+
+.why-us .box h4 {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 0;
+  margin: 20px 0;
+  color: #fffc;
+}
+
+.why-us .box p {
+  color: #aaa;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.why-us .box:hover {
+  background: #7777ed;
+  padding: 30px 30px 70px;
+}
+
+.why-us .box:hover span, .why-us .box:hover h4, .why-us .box:hover p {
+  color: #fff;
+}
+
+
+/*# sourceMappingURL=src_app_0116da._.css.map*/

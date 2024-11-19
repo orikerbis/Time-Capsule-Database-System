@@ -1,7 +1,6 @@
-import Hero from './sections/Hero';
-import About from './sections/About';
-import WhyUs from './sections/WhyUs';
-import Login from './sections/Login';
+import Hero from "../sections/Hero";
+import About from "../sections/About";
+import WhyUs from "../sections/WhyUs";
 
 export default function Home() {
   return (
@@ -10,7 +9,6 @@ export default function Home() {
       <main id="main">
         <About />
         <WhyUs />
-        <Login />
       </main>
     </>
   );

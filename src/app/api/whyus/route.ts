@@ -1,5 +1,5 @@
-import  { whyUs } from '../../data/data'
+import { whyUs } from "../../../data/data";
 
 export async function GET() {
-    return Response.json(whyUs);
+  return Response.json(whyUs);
 }
