@@ -1,45 +1,47 @@
-**Time-Capsule-Database-System-(TCDS)**
+#Time-Capsule-Database-System-(TCDS)
+
 DBMS project using relational database model. 
 Documentation included (Software Engineering)
 
 
-_Overview_
+Overview
 
 The Time Capsule Database System (TCDS) is a full-stack application designed for securely storing and retrieving digital memories, messages, and documents at a specified future date. Users can create, encrypt, and manage time capsules containing files and text, add shared users, and securely release the capsules on their scheduled date.
 
 
-_
-Features_
-    -- User Authentication: Login and registration with secure credentials.
-    -- Capsule Creation: Upload PNG, JPG, or GIF files, add descriptions, and set a future release date and time.
-    -- Encryption: AES-256 encryption for secure content storage.
-    -- Shared Access: Add up to 3 shared users per capsule for controlled access.
-    -- Capsule Release: Capsules remain sealed until the specified date and are accessible only to authorized users.
-    -- Audit Logs: Tracks user actions for monitoring and debugging.
+
+Features
+
+   -- User Authentication: Login and registration with secure credentials.
+   -- Capsule Creation: Upload PNG, JPG, or GIF files, add descriptions, and set a future release date and time.
+   -- Encryption: AES-256 encryption for secure content storage.
+   -- Shared Access: Add up to 3 shared users per capsule for controlled access.
+   -- Capsule Release: Capsules remain sealed until the specified date and are accessible only to authorized users.
+   -- Audit Logs: Tracks user actions for monitoring and debugging.
 
 
 
-_Tech Stack_
+Tech Stack
 
 Frontend
-    -- Framework: Next.js
-    -- UI Libraries: Material-UI, Tailwind CSS
-    -- Language: TypeScript
-    -- Design Tools: Canva
+ -- Framework: Next.js
+ -- UI Libraries: Material-UI, Tailwind CSS
+ -- Language: TypeScript
+ -- Design Tools: Canva
 
 Backend
-    -- Framework: Node.js
-    -- API Development: Express.js
-    -- Authentication: JWT (JSON Web Token)
-    -- Encryption: AES-256
+ -- Framework: Node.js
+ -- API Development: Express.js
+ -- Authentication: JWT (JSON Web Token)
+ -- Encryption: AES-256
 
 Database
-    -- Relational Database: MySQL
-    -- Management Tools: SQL Workbench
+ -- Relational Database: MySQL
+ -- Management Tools: SQL Workbench
 
     
 
-_Installation:_
+Installation:
 
   Clone the repository:
 
@@ -62,14 +64,14 @@ Start the development server:
 
     npm run dev
 
-_Usage:_
-    -- Register or log in to create a new user account.
-    -- Create a time capsule by uploading content, adding shared users, and setting a release date.
-    -- View or download released capsules after their scheduled date.
+Usage:
+   -- Register or log in to create a new user account.
+   -- Create a time capsule by uploading content, adding shared users, and setting a release date.
+   -- View or download released capsules after their scheduled date.
 
 
 
-_Use Cases:_
+Use Cases:
 
 1. User Registration and Login
     Actor: User
@@ -98,7 +100,7 @@ _Use Cases:_
 
 
 
-_Future Enhancements:_
-    -- Notification system to alert users upon capsule release.
-    -- Support for additional file types (e.g., videos and audio).
-    -- Multilingual user interface for global accessibility.
+Future Enhancements:
+ -- Notification system to alert users upon capsule release.
+ -- Support for additional file types (e.g., videos and audio).
+ -- Multilingual user interface for global accessibility.
