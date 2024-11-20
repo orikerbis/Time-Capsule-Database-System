@@ -12,7 +12,7 @@ The Time Capsule Database System (TCDS) is a full-stack application designed for
 
 Features
 
-   -- User Authentication: Login and registration with secure credentials.< br / >
+   -- User Authentication: Login and registration with secure credentials.<br />
    -- Capsule Creation: Upload PNG, JPG, or GIF files, add descriptions, and set a future release date and time.< br / >
    -- Encryption: AES-256 encryption for secure content storage.
    -- Shared Access: Add up to 3 shared users per capsule for controlled access.
