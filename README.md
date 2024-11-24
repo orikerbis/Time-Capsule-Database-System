@@ -3,6 +3,10 @@
 DBMS project using relational database model.<br />
 Documentation included (Software Engineering)<br />
 
+Project Preview:
+
+https://github.com/user-attachments/assets/8e20e94f-37ca-4099-bd9f-362feaa9aacb
+
 
 Overview
 
