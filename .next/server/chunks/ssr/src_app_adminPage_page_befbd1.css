@@ -1,0 +1,96 @@
+/* [project]/src/app/adminPage/page.css [app-client] (css) */
+.scheduled-container {
+  color: #fff;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.scheduled-main {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.scheduled-main h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.error-text {
+  color: red;
+  margin-bottom: 20px;
+  font-size: .9rem;
+}
+
+.capsules-columns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1;
+  max-width: 500px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.column h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.capsule-item {
+  display: flex;
+  align-items: center;
+  background: #ffffff0d;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #ffffff1a;
+  width: 100%;
+  max-width: 400px;
+  margin: 15px 0;
+}
+
+.capsule-image {
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #fff3;
+}
+
+.capsule-info p {
+  font-size: 1rem;
+  margin: 5px 0;
+  text-align: left;
+}
+
+.sign-out-button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.sign-out-button:hover {
+  background-color: #e63939;
+}
+
+
+/*# sourceMappingURL=src_app_adminPage_page_befbd1.css.map*/

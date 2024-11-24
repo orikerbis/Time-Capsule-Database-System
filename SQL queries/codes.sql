@@ -82,6 +82,7 @@ CREATE TABLE `audit_logs` (
 
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
+
 -- triggers 
 
 DELIMITER $$
@@ -124,19 +125,6 @@ END $$
 
 DELIMITER ;
 
-DELIMITER $$
-
-CREATE TRIGGER after_received_capsules_insert
-AFTER INSERT ON received_capsules
-FOR EACH ROW
-BEGIN
-    INSERT INTO audit_logs (user_id, action_type, capsule_id, timestamp)
-    SELECT tc.user_id, 'delivered', NEW.capsule_id, NOW()
-    FROM time_capsules tc
-    WHERE tc.capsule_id = NEW.capsule_id;
-END$$
-
-DELIMITER ;
 
 DELIMITER $$
 
@@ -220,6 +208,7 @@ DELIMITER ;
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+
 ------------ procedure -----------
 DELIMITER $$
 
@@ -280,6 +269,7 @@ DELIMITER ;
 
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
+
 -----event-----
 
 -- Enable the event scheduler
@@ -300,7 +290,9 @@ DELIMITER ;
 
 ----------------------- codes used in frontend -------------------------------------
 
------ join query -----
+----- JOIN QUERIES -----
+
+----- join query 1 -----
 SELECT al.log_id, al.user_id, al.action_type, al.capsule_id, al.timestamp,
              tc.capsule_name,
              GROUP_CONCAT(DISTINCT su.shared_username ORDER BY su.shared_username ASC) AS shared_usernames
@@ -309,6 +301,36 @@ SELECT al.log_id, al.user_id, al.action_type, al.capsule_id, al.timestamp,
       LEFT JOIN shared_users su ON al.capsule_id = su.capsule_id
       GROUP BY al.log_id, al.user_id, al.action_type, al.capsule_id, al.timestamp, tc.capsule_name
       ORDER BY al.timestamp DESC
+
+------ join query 2 ------
+SELECT al.log_id, al.user_id, al.action_type, al.capsule_id, al.timestamp,
+             tc.capsule_name,
+             GROUP_CONCAT(DISTINCT su.shared_username ORDER BY su.shared_username ASC) AS shared_usernames
+      FROM audit_logs al
+      LEFT JOIN time_capsules tc ON al.capsule_id = tc.capsule_id
+      LEFT JOIN shared_users su ON al.capsule_id = su.capsule_id
+      WHERE al.user_id = ?
+      GROUP BY al.log_id, al.user_id, al.action_type, al.capsule_id, al.timestamp, tc.capsule_name
+      ORDER BY al.timestamp DESC
+
+----- join query 3 -----
+SELECT rc.received_id, rc.capsule_id, rc.shared_by_username, rc.received_at, tc.capsule_name
+        FROM received_capsules rc
+        LEFT JOIN time_capsules tc ON rc.capsule_id = tc.capsule_id
+        WHERE rc.receiver_username = ?
+        ORDER BY rc.received_at DESC
+
+----- join query 4 -----
+SELECT tc.capsule_id, tc.capsule_name, tc.status
+      FROM users u
+      INNER JOIN time_capsules tc ON u.user_id = tc.user_id
+      WHERE u.username = ?
+
+SELECT tc.capsule_id, tc.capsule_name, tc.status
+      FROM received_capsules rc
+      INNER JOIN time_capsules tc ON rc.capsule_id = tc.capsule_id
+      WHERE rc.receiver_username = ?
+--------------------------------------------------------------------------
 
 ------ aggregate query ------
 SELECT COUNT(DISTINCT capsule_id) AS totalCount
@@ -335,6 +357,51 @@ INSERT INTO shared_users (capsule_id, shared_username)
         SELECT 1 FROM users
         WHERE username = ?
       )
+
+------------------------------------------------
+
+-- select and insert commands
+SELECT * FROM users WHERE username = ?
+
+SELECT capsule_id
+      FROM time_capsules
+      WHERE capsule_name = ? AND status = 'delivered'
+
+SELECT content_type, TO_BASE64(content_data) AS content_data
+      FROM capsule_contents
+      WHERE capsule_id = ?
+
+SELECT user_id FROM users WHERE username = ?
+SELECT capsule_id FROM time_capsules WHERE capsule_name = ? AND user_id = ?
+INSERT INTO capsule_contents (capsule_id, content_type, content_data, content_size)
+         VALUES (?, 'image', ?, ?)
+
+SELECT * FROM users WHERE email = ? OR username = ?
+INSERT INTO users (first_name, last_name, email, username, password_hash) VALUES (?, ?, ?, ?, ?)
+
+SELECT user_id FROM users WHERE username = ?
+SELECT * FROM time_capsules WHERE user_id = ? AND capsule_name = ?
+INSERT INTO time_capsules (user_id, capsule_name, release_date, release_time, status)
+       VALUES (?, ?, ?, ?, ?)
+
+SELECT su.shared_username 
+      FROM shared_users su 
+      WHERE su.capsule_id = ?
+
+SELECT t.capsule_id, t.capsule_name, t.release_date, t.release_time, t.status, u.first_name, u.last_name
+      FROM time_capsules t
+      JOIN users u ON t.user_id = u.user_id
+      WHERE t.capsule_name = ?
+
+----- update command -----
+SELECT user_id, password_hash FROM users WHERE username = ?
+SELECT * FROM users WHERE username = ?
+SELECT * FROM users WHERE email = ?
+SELECT ${field} FROM users WHERE user_id = ?
+UPDATE users SET ${field} = ? WHERE user_id = ?
+
+----- delete command -----
+DELETE FROM users WHERE username = ?
 
 ------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------

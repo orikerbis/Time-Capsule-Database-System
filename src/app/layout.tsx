@@ -4,6 +4,7 @@ import "./globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.css";
 import BackToTopBtn from "../components/BackToTopBtn";
+import CursorTrail from "../components/cursorTrail"; 
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body className={`${playfair.variable} ${playfair.variable}`}>
         {children}
         <BackToTopBtn />
+        <CursorTrail />
       </body>
     </html>
   );

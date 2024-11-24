@@ -12,13 +12,22 @@
     "[project]/src/app/newhome/dashboardPage/page": [
       "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
     ],
-    "[project]/src/app/newhome/timeCapsulePage/page": [
-      "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
-    ],
     "[project]/src/app/newhome/history/page": [
       "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
     ],
+    "[project]/src/app/_not-found/page": [
+      "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
+    ],
     "[project]/src/app/newhome/profile/page": [
+      "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
+    ],
+    "[project]/src/app/page": [
+      "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
+    ],
+    "[project]/src/app/login/page": [
+      "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
+    ],
+    "[project]/src/app/adminPage/page": [
       "static/media/nuFiD_vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ-s.p.d4229eda.woff2"
     ]
   },

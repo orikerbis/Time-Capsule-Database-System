@@ -238,6 +238,7 @@
 body {
   background: url("/_next/static/media/starry.8bdb6269.gif") center;
   color: #fff;
+  cursor: none;
   font-family: Open Sans, sans-serif !important;
 }
 
@@ -266,6 +267,65 @@ section {
 
 .section-bg {
   background: url("/_next/static/media/starry.8bdb6269.gif") center;
+}
+
+.particle {
+  position: absolute;
+  background: linear-gradient(45deg, #f0f, #f0f, #f0f);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 5px #f0f, 0 0 10px #f0f, 0 0 20px #f0f, 0 0 30px #f0f;
+  animation: .5s ease-out particleAnim, 1.5s infinite glitterAnim;
+}
+
+@keyframes particleAnim {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes glitterAnim {
+  0% {
+    opacity: .8;
+    transform: scale(.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: .8;
+    transform: scale(.8);
+  }
+}
+
+.cursor {
+  position: absolute;
+  background-color: #cda45e;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width .1s, height .1s;
+}
+
+.particle-container {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
 }
 
 

@@ -2,11 +2,11 @@
   "pages": {
     "/login/page": [
       "static/chunks/[root of the server]__98fa05._.css",
-      "static/chunks/_f0cb7c._.js",
+      "static/chunks/_7f0aab._.js",
       "static/chunks/src_app_layout_tsx_600847._.js",
       "static/chunks/src_app_login_page_ef7ef4.css",
       "static/chunks/src_app_login_page_tsx_9ae2fd._.js",
-      "static/chunks/src_app_login_page_tsx_69961a._.js",
+      "static/chunks/src_app_login_page_tsx_81ee75._.js",
       "static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc._.js",
       "static/chunks/node_modules_next_dist_compiled_107ce8._.js",
       "static/chunks/node_modules_next_dist_client_e72844._.js",
