@@ -1,6 +1,8 @@
 **Time-Capsule-Database-System-(TCDS)**
 
 DBMS project using relational database model.<br />
+DBMS Project Report: dbms.pdf <br />
+<br />
 Documentation included (Software Engineering)<br />
 
 Project Preview:
